@@ -23,3 +23,12 @@ input:focus {
 .mat-fab:not([class*="mat-elevation-z"]), .mat-mini-fab:not([class*="mat-elevation-z"]){
     box-shadow: none;
 }
+
+
+/*.mat-list-option:hover, .mat-list-option:focus, .mat-nav-list .mat-list-item:hover, .mat-nav-list .mat-list-item:focus, .mat-action-list .mat-list-item:hover, .mat-action-list .mat-list-item:focus {
+    background: rgba(0, 139, 139, 0.7); 
+}*/
+
+.mat-list-option:hover, .mat-list-option[aria-selected="true"], .mat-nav-list .mat-list-item:hover, .mat-nav-list .mat-list-item[aria-selected="true"], .mat-action-list .mat-list-item:hover, .mat-action-list .mat-list-item[aria-selected="true"] {
+    background: rgba(144, 148, 148, 0.7); 
+}

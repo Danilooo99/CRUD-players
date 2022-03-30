@@ -17,9 +17,13 @@ import { MatSelectModule } from '@angular/material/select';
 // List
 import { MatListModule } from '@angular/material/list';
 
+// Component
+import { CRUDComponent } from './crud/crud.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CRUDComponent
   ],
   imports: [
     BrowserModule,

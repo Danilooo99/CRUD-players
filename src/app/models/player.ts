@@ -1,11 +1,9 @@
 export class Player {
 
-    constructor(
-    public id: number,
-    public name: string,
-    public surname: string,
-    public age: number,
-    public country: string,
-    public position: string,
-    ) {}
+    id: number = 0;
+    name!: string;
+    surname!: string;
+    age!: number;
+    country!: string;
+    position!: string;
 } 

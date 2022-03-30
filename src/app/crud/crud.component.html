@@ -1,0 +1,66 @@
+
+<div class="container">
+
+    <div class="list">
+      <h2 [ngStyle]="{'color': 'blue'}">List of Players</h2>
+      <mat-selection-list #players>
+        <mat-list-option *ngFor="let player of playerArray" [ngStyle]="{'display': 'flex'}" (click)="openForEdit(player)" [class.aria-selected]="player == selectedPlayer">
+            <p> 
+              <button [ngStyle]="{'margin': '15px'}" mat-mini-fab color="primary"> {{ player.id }}</button>
+              {{ player.name }}&nbsp;{{player.surname }}
+            </p>
+        </mat-list-option>
+      </mat-selection-list>
+      
+      <p class="options-list">
+        Options selected: {{players.selectedOptions.selected.length}}
+      </p>
+      
+    </div>
+  
+    <div class="form">
+      
+      <mat-form-field color="primary" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Insert name ..." [(ngModel)]="selectedPlayer.name"> <!-- [ngStyle]="{'background-color': 'red'}"*/ -->
+      </mat-form-field>
+  
+      <mat-form-field color="primary" appearance="fill">
+        <mat-label>Surname</mat-label>
+        <input matInput type="text" placeholder="Insert surname ..." [(ngModel)]="selectedPlayer.surname"> 
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" placeholder="Insert age ..." [(ngModel)]="selectedPlayer.age"> 
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Country</mat-label>
+        <input matInput type="text" placeholder="Insert country ..." [(ngModel)]="selectedPlayer.country">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Select Position</mat-label>
+        <mat-select [(ngModel)]="selectedPlayer.position">
+          <mat-option value="GoalKeepr" >GoalKeeper</mat-option>
+          <mat-option value="Defender" >Defender</mat-option>
+          <mat-option value="Midfielder" >Midfielder</mat-option>
+          <mat-option value="Striker" >Striker</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button (click)="addOrEdit()" mat-raised-button type="submit" color="primary">Create</button>
+      <button
+      *ngIf="selectedPlayer.id !== 0"
+      mat-raised-button type="submit" color="warn"
+      (click)="delete()"
+      >
+      Delete
+      </button>
+  
+    </div>
+  
+  </div>
+  
+  
