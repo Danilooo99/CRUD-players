@@ -1,17 +1,58 @@
+
 <div class="container">
-  <mat-form-field color="primary" appearance="fill">
-    <mat-label>Input</mat-label>
-    <input matInput [ngStyle]="{'background-color': 'red'}">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Select</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Textarea</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
+
+  <div class="list">
+    <h2 [ngStyle]="{'color': 'blue'}">List of Players</h2>
+    <mat-selection-list #players>
+      <mat-list-option *ngFor="let player of playerArray" [ngStyle]="{'display': 'flex'}">
+          <p> 
+            <button [ngStyle]="{'margin': '15px'}" mat-mini-fab color="primary"> {{ player.id }}</button>
+            {{ player.name }}&nbsp;{{player.surname }}
+          </p>
+      </mat-list-option>
+    </mat-selection-list>
+    
+    <p class="options-list">
+      Options selected: {{players.selectedOptions.selected.length}}
+    </p>
+    
+  </div>
+
+  <div class="form">
+    
+    <mat-form-field color="primary" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" placeholder="Insert name ..."> <!-- [ngStyle]="{'background-color': 'red'}"*/ -->
+    </mat-form-field>
+
+    <mat-form-field color="primary" appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input matInput type="text" placeholder="Insert surname ..."> 
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Age</mat-label>
+      <input matInput type="number" placeholder="Insert age ..."> 
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <input matInput type="text" placeholder="Insert country ...">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Select Position</mat-label>
+      <mat-select>
+        <mat-option value="one">GoalKeeper</mat-option>
+        <mat-option value="two">Defender</mat-option>
+        <mat-option value="three">Midfielder</mat-option>
+        <mat-option value="four">Striker</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" color="warn">Create</button>
+
+  </div>
+
 </div>
+
