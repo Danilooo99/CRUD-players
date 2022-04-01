@@ -1,27 +1,38 @@
-# CRUDPlayers
+# DAW II - CRUD-Players Form
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+### Autor del proyecto
 
-## Development server
+Danilo Rivero Pérez - Grado en Ingeniería Informática - DAW II.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Descripción del CRUD de jugadores.
 
-## Code scaffolding
+Se ha creado una lista de objetos de tipo ```Players```, que pretende simular una lista de objetos, en el que cada objeto es un jugador de fútbol con sus atributos correspondientes (nombre, apellido, edad, país y posición). A través de un formulario, se pueden introducir nuevos valores, tanto para crear, como para editar o eliminar jugadores de la lista. En todo momento, la lista estará visible al lado del formulario y además está inicializada de antemano con tres jugadores. Para la realización de este proyecto se ha usado [Angular](https://angular.io/) y para maquetar el diseño de la gran parte del proyecto, se ha usado [Angular Material](https://material.angular.io/), y [Bootstrap](https://getbootstrap.com/) exclusivamente para el diseño de la lista de jugadores.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Las funcionalidades del CRUD de jugadores son:
 
-## Build
+- Permite ```crear``` nuevos jugadores.
+- Permite ```editar``` jugadores.
+- Permite ```eliminar``` jugadores.
+- Permite ```visualizar``` a través de una lista ls distintos jugadores.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Ejecutar el proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para ejecutar este proyecto en ***local*** se deben seguir los siguientes pasos:
 
-## Running end-to-end tests
+  1. Ejecutar en la terminal desde la ruta del proyecto, el comando: ```mpm install``` para instalar todas las dependencias del proyecto en Angular.
+  2. Ejecutar desde la terminal, el servidor local con el comando: ```ng serve --open```
+  3. Se abrirá en un navegador el proyecto realizado a través de la URL ```localhost:nºpuerto```
+  
+### Hosting de alojamiento del proyecto
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Podrá ver el proyecto de la calculadora realizado [aquí](https://crud-players.netlify.app/).
 
-## Further help
+## Tecnologías utilizadas en el Proyecto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Tecnologías                                                           | Descripción                               |
+| --------------------------------------------------------------------- | ----------------------------------------- |
+| **[Angular](https://angular.io/)**                                    | Framework de JavaScript                   |
+| **[TypeScript](https://www.typescriptlang.org/)**                     | Superset de Javascript con tipado         |
+| **[Material](https://material.angular.io/)**                          | Librería de diseño para Angular           |
+| **[Bootstrap](https://getbootstrap.com/)**                            | Librería de diseño                        |
