@@ -59,8 +59,12 @@ export class CRUDComponent implements OnInit {
 
   //Delete players
   delete(): void {
+    let button = document.getElementById('button') as HTMLAnchorElement;
     this.playerArray = this.playerArray.filter(x => x != this.selectedPlayer);
-    this.selectedPlayer = new Player(); 
+    this.selectedPlayer = new Player();
+    if(button.innerText==="Edit"){
+      button.innerHTML = "Create"; 
+    } 
   }
   
 }
