@@ -19,11 +19,17 @@ import { MatListModule } from '@angular/material/list';
 
 // Component
 import { CRUDComponent } from './crud/crud.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
+// Navbar
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CRUDComponent
+    CRUDComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,8 @@ import { CRUDComponent } from './crud/crud.component';
     MatFormFieldModule,
     FormsModule,
     MatListModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

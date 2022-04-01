@@ -3,18 +3,18 @@
 
     <div class="list">
       <h2 [ngStyle]="{'color': 'blue'}">List of Players</h2>
-      <mat-selection-list #players>
-        <mat-list-option *ngFor="let player of playerArray" [ngStyle]="{'display': 'flex'}" (click)="openForEdit(player)" [class.aria-selected]="player == selectedPlayer">
-            <p> 
-              <button [ngStyle]="{'margin': '15px'}" mat-mini-fab color="primary"> {{ player.id }}</button>
-              {{ player.name }}&nbsp;{{player.surname }}
-            </p>
-        </mat-list-option>
-      </mat-selection-list>
       
-      <p class="options-list">
-        Options selected: {{players.selectedOptions.selected.length}}
-      </p>
+      <ul class="list-group">
+        <li
+          *ngFor="let player of playerArray" 
+          [ngStyle]="{'display': 'flex'}" 
+          class="list-group-item list-group-item-action"
+          (click)="openForEdit(player)"
+          [class.active]="player == selectedPlayer"
+        >
+        <span class="badge bg-secondary"> {{ player.id }}</span>&nbsp;&nbsp;&nbsp;{{ player.name }}&nbsp;{{player.surname }}
+        </li>
+      </ul> 
       
     </div>
   
@@ -22,45 +22,44 @@
       
       <mat-form-field color="primary" appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput type="text" placeholder="Insert name ..." [(ngModel)]="selectedPlayer.name"> <!-- [ngStyle]="{'background-color': 'red'}"*/ -->
+        <input id="name" required minlength="3" matInput type="text" placeholder="Insert name ..." [(ngModel)]="selectedPlayer.name"> <!-- [ngStyle]="{'background-color': 'red'}"*/ -->
       </mat-form-field>
   
       <mat-form-field color="primary" appearance="fill">
         <mat-label>Surname</mat-label>
-        <input matInput type="text" placeholder="Insert surname ..." [(ngModel)]="selectedPlayer.surname"> 
+        <input id="surname" required minlength="3" matInput type="text" placeholder="Insert surname ..." [(ngModel)]="selectedPlayer.surname"> 
       </mat-form-field>
   
       <mat-form-field appearance="fill">
         <mat-label>Age</mat-label>
-        <input matInput type="number" placeholder="Insert age ..." [(ngModel)]="selectedPlayer.age"> 
+        <input id="age" matInput type="number" placeholder="Insert age ..." [(ngModel)]="selectedPlayer.age"> 
       </mat-form-field>
   
       <mat-form-field appearance="fill">
         <mat-label>Country</mat-label>
-        <input matInput type="text" placeholder="Insert country ..." [(ngModel)]="selectedPlayer.country">
+        <input id="country" required minlength="5" matInput type="text" placeholder="Insert country ..." [(ngModel)]="selectedPlayer.country">
       </mat-form-field>
   
       <mat-form-field appearance="fill">
         <mat-label>Select Position</mat-label>
-        <mat-select [(ngModel)]="selectedPlayer.position">
-          <mat-option value="GoalKeepr" >GoalKeeper</mat-option>
-          <mat-option value="Defender" >Defender</mat-option>
-          <mat-option value="Midfielder" >Midfielder</mat-option>
-          <mat-option value="Striker" >Striker</mat-option>
+        <mat-select required [(ngModel)]="selectedPlayer.position">
+          <mat-option class="select" value="GoalKeepr" >GoalKeeper</mat-option>
+          <mat-option class="select" value="Defender" >Defender</mat-option>
+          <mat-option class="select" value="Midfielder" >Midfielder</mat-option>
+          <mat-option class="select" value="Striker" >Striker</mat-option>
         </mat-select>
       </mat-form-field>
-  
-      <button (click)="addOrEdit()" mat-raised-button type="submit" color="primary">Create</button>
-      <button
-      *ngIf="selectedPlayer.id !== 0"
-      mat-raised-button type="submit" color="warn"
-      (click)="delete()"
-      >
-      Delete
-      </button>
-  
+ 
+      <div class="container-buttons">
+        <button id="button" (click)="addOrEdit()" mat-raised-button type="submit" color="primary">Create</button>
+        <button
+        *ngIf="selectedPlayer.id !== 0"
+        mat-raised-button type="submit" color="warn"
+        (click)="delete()"
+        >
+        Delete
+        </button>
+      </div>
     </div>
   
   </div>
-  
-  

@@ -13,19 +13,20 @@
     margin: 8% auto;
 }
 
+.span {
+    background-color: blue;
+    width: 12%;
+    text-align: center;
+
+}
+
 .list {
     width: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
     margin-top: -5%;
-}
-
-.options-list {
-    margin-top: 4%;
-    color: blue;
 }
 
 .id-users {
@@ -43,5 +44,29 @@
     align-items: center;
     justify-content: center;
 }
+
+.container-buttons {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+input:focus {
+    outline: green;
+}
+
+@media screen and (max-width: 1060px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .form {
+        margin-top: 15%;
+    }
+}
+
 
 
